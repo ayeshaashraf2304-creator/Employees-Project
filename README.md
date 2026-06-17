@@ -13,3 +13,7 @@ This project analyzes a dataset of 100 employees to uncover insights regarding a
 * Aggregate functions ( `COUNT`, `AVG`)
 * Key word (`AS`)
 * Clause (`order by` , `group by` )
+
+##Source of data
+directly made through 
+👉https://www.mockaroo.com/
