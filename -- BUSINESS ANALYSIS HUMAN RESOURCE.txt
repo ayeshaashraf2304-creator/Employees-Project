@@ -1,25 +1,31 @@
--- BUSINESS ANALYSIS: HUMAN RESOURCES
+-- BUSINESS ANALYSIS: EMPLOYEES DATA ANALYSIS
 
 -- Question 1: What is the total employee count and average salary for each department?
+
 SELECT department, COUNT(*) AS employee_count, AVG(salary) AS average_salary
 FROM employees
 GROUP BY department
 ORDER BY average_salary DESC;
 
+
 -- Question 2: Is there a salary gap between genders across the company?
+
 SELECT gender, COUNT(*) AS employee_count, AVG(salary) AS average_salary
 FROM employees
 GROUP BY gender;
 
+
 -- Question 3: Find the top 3 highest-paid employees in the Engineering department.
+
 SELECT first_name, last_name, salary
 FROM employees
 WHERE department = 'Engineering'
 ORDER BY salary DESC
 LIMIT 3;
 
+
 -- Question 4: How many employees were hired each year?
-SELECT STRFTIME('%Y', hire_date) AS hire_year, COUNT(*) AS new_hires
+SELECT YEAR(hire_date) AS hire_year,COUNT(*) AS employee_count
 FROM employees
 GROUP BY hire_year
 ORDER BY hire_year ASC;
