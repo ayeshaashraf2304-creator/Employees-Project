@@ -10,22 +10,23 @@ ORDER BY average_salary DESC;
 
 -- Question 2: Is there a salary gap between genders across the company?
 
-SELECT gender, COUNT(*) AS employee_count, AVG(salary) AS average_salary
+SELECT gender, COUNT(*) AS employee_count,
+AVG (REPLACE(salary, '$', ''):: numeric) as average_salary
 FROM employees
 GROUP BY gender;
-
 
 -- Question 3: Find the top 3 highest-paid employees in the Engineering department?
 
 SELECT first_name, last_name, salary
 FROM employees
-WHERE department = 'Engineering'
+WHERE departnment = 'Engineering'
 ORDER BY salary DESC
 LIMIT 3;
 
 
 -- Question 4: How many employees were hired each year?
-SELECT YEAR(hire_date) AS hire_year,COUNT(*) AS employee_count
+
+SELECT extract(YEAR from "hire_date" )AS hire_year,COUNT(*) AS employee_count
 FROM employees
 GROUP BY hire_year
 ORDER BY hire_year ASC;
