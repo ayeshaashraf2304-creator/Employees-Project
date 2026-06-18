@@ -1,10 +1,10 @@
 -- BUSINESS ANALYSIS: EMPLOYEES DATA ANALYSIS
 
--- Question 1: What is the total employee count and average salary for each department?
+-- Question 1: What is the total employee count and average salary for each departnment?
 
-SELECT department, COUNT(*) AS employee_count, AVG(salary) AS average_salary
+SELECT departnment, COUNT(*) AS employee_count, AVG(REPLACE(salary, '$', ''):: numeric) AS average_salary
 FROM employees
-GROUP BY department
+GROUP BY departnment
 ORDER BY average_salary DESC;
 
 
