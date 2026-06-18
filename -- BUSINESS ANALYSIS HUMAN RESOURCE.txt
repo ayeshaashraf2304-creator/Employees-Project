@@ -15,7 +15,7 @@ AVG (REPLACE(salary, '$', ''):: numeric) as average_salary
 FROM employees
 GROUP BY gender;
 
--- Question 3: Find the top 3 highest-paid employees in the Engineering department?
+-- Question 3: Find the top 3 highest-paid employees in the Engineering departnment?
 
 SELECT first_name, last_name, salary
 FROM employees
